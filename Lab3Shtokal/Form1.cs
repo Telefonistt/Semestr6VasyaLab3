@@ -39,6 +39,7 @@ namespace Lab3Shtokal
             
             label1.Text = i.ToString();
             label2.Text = ((Phasa)phasa).ToString();
+            label3.Text = color.ToKnownColor().ToString();
             Draw();
 
         }
@@ -184,19 +185,19 @@ namespace Lab3Shtokal
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //if (timer1.Enabled == false)
-            //{
+            if (timer1.Enabled == false)
+            {
 
 
-            //    Shape shape = new Shape();
-            //    shape.ShowDialog(this);
-            //    if (shape.DialogResult == DialogResult.OK)
-            //        figureForm = (FigureForm)shape.getFF();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("It's necessary to stop process!");
-            //}
+                Shape shape = new Shape();
+                shape.ShowDialog(this);
+                if (shape.DialogResult == DialogResult.OK)
+                    color = shape.getColor();
+            }
+            else
+            {
+                MessageBox.Show("It's necessary to stop process!");
+            }
         }
     }
 }
